@@ -1,0 +1,16 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+
+}
+
+#game_map{float: left;
+  height: 100%;
+  width: 40%;}
+#game_panorama {
+  float: right;
+  height: 100%;
+  width: 60%;
+}
