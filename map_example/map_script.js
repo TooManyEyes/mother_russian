@@ -1,13 +1,14 @@
 var marker;
+var round = 1;
+let map;
 
 function initGameMap(listener) {
-  const haightAshbury = { lat: 37.769, lng: -122.446 };
-  const moscow = { lat: 37.769, lng: -122.446 }
-    let map = new google.maps.Map(document.getElementById("game_map"), {
-        zoom: 12,
-        center: haightAshbury,
-        mapTypeId: "hybrid",
-        disableDefaultUI: true,
+    moscow = { lat: 55.754134187976305, lng: 37.62053362220376 }
+    map = new google.maps.Map(document.getElementById("game_map"), {
+    zoom: 12,
+    center: moscow,
+    mapTypeId: "roadmap",
+    disableDefaultUI: true,
     });
 
   google.maps.event.addListener(map, "click", function (event) {
@@ -34,11 +35,19 @@ function initGameMap(listener) {
       });
     
   map.setStreetView(panorama);     
-}
+};
 
 
 function getCoordinates(location){
     const coordinates = location
     alert(location)
-}
+};
 
+var updateRound = function() {
+    var round = document.getElementById('round');
+    var count = Number(round.innerHTML);
+    round.innerHTML = count += 1;
+};
+
+
+//setInterval(updateRound, 20)
