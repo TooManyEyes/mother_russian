@@ -3,7 +3,7 @@ var round = 1;
 let map;
 
 function initGameMap(listener) {
-    moscow = { lat: 55.754134187976305, lng: 37.62053362220376 }
+    moscow = { lat: 55.7538594, lng: 37.6206391 }
     map = new google.maps.Map(document.getElementById("game_map"), {
     zoom: 12,
     center: moscow,
