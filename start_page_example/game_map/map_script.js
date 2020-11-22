@@ -120,7 +120,28 @@ let updateRound = function () {
 };
 
 let showDistance = function () { 
-    //TODO
+    // A - координаты точки панорамы, B - координаты точки, которую поставил игрок
+    var lineSymbol = {
+        path: 'M 0,-1 0,1',
+        strokeOpacity: 1,
+        scale: 3.5
+    };
+    markerA = new google.maps.Marker({
+        position: latLngA,
+        map: map,
+        Clickable: false,
+    });
+    line = new google.maps.Polyline({
+        path: [latLngA, latLngB],
+        map: map,
+        strokeOpacity: 0,
+        icons: [{
+            icon: lineSymbol,
+            offset: '0',
+            repeat: '20px'
+        }],
+    }); // рисует линию между двумя маркерами
+    distance = google.maps.geometry.spherical.computeDistanceBetween(markerA.getPosition(), markerB.getPosition()); // расстояние между маркерами в метрах
 }
 
 let updateScore = function () {
