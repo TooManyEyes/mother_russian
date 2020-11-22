@@ -1,34 +1,31 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Пример заглавной страницы</title>
+    <title>Mother Russia</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;600&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
 <div>
-    <p class="logo">Mother Russia<p>
+    <p class="logo">Mother Russia
+    <p>
     <p class="under_logo">Интерактивное изучение географии родной страны</p>
 </div>
-<div class="buttons"> 
-    <div class="button">
-    <input value="Рекорды" onclick="alert('Функционал недоступен')" type="button">
-    </div>
-    <div class="button">
-    <input value="Начать игру" onclick="location.href = 'game_map/game.html'" type="button">
-    </div>
-    <div class="dropdown">
-        <button class="main_menu_btn" id="find_game">Выбрать режим</button>
-        <div class="dropdown-child">
-            <a type="button" onclick="alert()">Подраздел 1</a>
-            <a type="button"onclick="alert()">Подраздел 2</a>
-        </div>
-    </div>
-    <div class="button">
-    <input value="О проекте" onclick="alert('Функционал недоступен')" type="button">
-    </div>
+<hr>
+<nav>
+    <ul class="menu">
+        <li><a onclick="alert('Функционал недоступен')">Рекорды</a></li>
+        <li><a href='game_map/game.html'>Начать игру</a></li>
+        <li><a class="down">Режим игры</a>
+            <ul class="submenu">
+                <li><a onclick="alert('Функционал недоступен')">СПб</a></li>
+                <li><a onclick="alert('Функционал недоступен')">МСК</a></li>
+            </ul>
+        </li>
+        <li><a onclick="alert('Функционал недоступен')">О проекте</a></li>
+    </ul>
+</nav>
 
-</div>
 </body>
 </html>
