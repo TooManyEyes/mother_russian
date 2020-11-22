@@ -35,6 +35,7 @@ div.main_menu_btn {
 }
 div.dropdown {
     margin-left: 10;
+    margin-right: 10;
     display: inline-block;
 }
 div.dropdown-child {
