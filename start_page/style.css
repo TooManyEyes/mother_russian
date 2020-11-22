@@ -27,3 +27,26 @@ div.button {
     margin-top: 0;
     text-align: center;
 }
+div.main_menu_btn {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 10px;
+}
+div.dropdown {
+    margin-left: 10;
+    display: inline-block;
+}
+div.dropdown-child {
+    display: none;
+}
+div.dropdown-child a {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 10px;
+
+}
+div.dropdown:hover .dropdown-child {
+    display: table;
+}
