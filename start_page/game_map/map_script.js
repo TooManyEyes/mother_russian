@@ -26,7 +26,6 @@ let locations = new Map([
     ["Arkhangelsk", {lat: 64.5439575, lng: 40.5107735}]
 ]);
 
-
 function initGameProcess(gameInfo) {
     // let gameMode = gameInfo.get('gameMode');
     // let locations = gameInfo.get('locations');
