@@ -82,11 +82,41 @@ function initGameMap(latLngA) {
 
 
 function updateMap() {
-    //TODO
+    locationNumber += 1
+
+    panorama = new google.maps.StreetViewPanorama(
+        document.getElementById("game_panorama"), {
+            position: fenway,
+            pov: {heading: 34, pitch: 10,},
+            addressControl: false,
+            enableCloseButton: false,
+        });
+
+    map.setStreetView(panorama);
+    map = new google.maps.Map(document.getElementById("game_map"), {
+        zoom: 12,
+        center: moscow,
+        mapTypeId: "roadmap",
+        disableDefaultUI: true,
+        clickableIcons: false,
+    });
+    google.maps.event.addListener(map, "click", function (event) {
+        latLngB = event.latLng;
+        if (markerB && markerB.setMap) {
+            markerB.setMap(null);
+        }
+        markerB = new google.maps.Marker({
+            position: latLngB,
+            map: map,
+            Clickable: false,
+        });
+    });
 }
 
 let updateRound = function () {
-    //TODO
+    round = document.getElementById('round');
+    var i = parseInt(round.textContent)
+    round.textContent = i + 1;
 };
 
 let showDistance = function () { 
