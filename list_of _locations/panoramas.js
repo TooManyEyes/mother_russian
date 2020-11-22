@@ -13,10 +13,14 @@ let locationsMap = new Map([
   ["Arkhangelsk", { lat: 64.5439575, lng: 40.5107735}] 
 ]);
 
-let locationsArr = [];
-for (let location of locationsMap.keys()) {
-  locationsArr.push(location); 
+function makeArr(locationMap){
+    let locationsArr = [];
+    for (let location of locationsMap.keys()) {
+      locationsArr.push(location); 
+    }
+    return locationsArr;
 }
+
 	
 function shuffle(locationsArr) {
 
@@ -31,7 +35,18 @@ function shuffle(locationsArr) {
     return locationsArr;
 };
 
-let randomLoc = shuffle(locationsArr);
-alert(randomLoc);
+function randomLoc(locationMap, n) {
+    let randomMap = new Map();
+    let locationArr = [];
+    locationArr = makeArr(locationMap);
+    locationArr = shuffle(locationArr);
+    locationArr.length = n;
+    for (let location of locationArr)
+    {
+        randomMap.set(location, locationMap.get(location));
+    }
+    return randomMap;
+}
 
-//setInterval(updateRound, 20)
+
+

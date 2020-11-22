@@ -1,0 +1,49 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+
+}
+
+#game_map{float: left;
+  height: 92%;
+  width: 40%;}
+#game_panorama {
+  float: right;
+  height: 100%;
+  width: 60%;}
+#UI {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 10px;
+}
+#UI_element {
+    font-family: 'Roboto Slab', serif;
+    font-size: 40px;
+    margin: 0 10px;
+}
+#round {
+    font-family: 'Roboto Slab', serif;
+    font-size: 40px;
+    margin-bottom: 0;
+    margin-top: 0;
+    margin-left: -5px;
+    margin-right: 5px;
+}
+#score {
+    font-family: 'Roboto Slab', serif;
+    font-size: 40px;
+    margin-bottom: 0;
+    margin-top: 0;
+    margin-left: -5px;
+    margin-right: 20px;
+}
+#confirm_button {
+    font-family: 'Roboto Slab', serif;
+    font-size: 40px;
+    margin-bottom: 0;
+    margin-top: 0;
+    margin-left: -5px;
+}
