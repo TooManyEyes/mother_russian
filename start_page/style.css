@@ -1,9 +1,10 @@
 body {
     width: auto;
     margin: auto;
-    background-image: url("IMG_2363.jpeg");
+    background-image: url("Russia.png");
     background-size: cover;
     position: relative;
+    font-family: 'Roboto Slab', serif;
 }
 
 .logo {
@@ -25,6 +26,7 @@ hr {
 }
 
 nav {
+    margin-top: -20px;
     text-align: center;
     padding: 40px 0 0;
 }
