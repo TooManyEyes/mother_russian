@@ -94,5 +94,9 @@ let showDistance = function () {
 }
 
 let updateScore = function () {
-    //TODO
+    if (20000 - distance >= 0){
+        score = document.getElementById('score');
+        var j = parseInt(score.textContent);
+        score.textContent = j + 1;
+    }
 }
