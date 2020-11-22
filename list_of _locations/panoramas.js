@@ -1,4 +1,4 @@
-let locationsMap = new Map([
+let towns = new Map([
   ["Moscow", { lat: 55.7538594, lng: 37.6206391 }],
   ["Saint Petersburg", { lat: 59.9395103, lng: 30.3151588 }],
   ["Kazan", { lat: 55.7989683, lng: 49.1047278 }],
@@ -14,14 +14,13 @@ let locationsMap = new Map([
 ]);
 
 let locationsArr = [];
-for (let location of locationsMap.keys()) {
+for (let location of towns.keys()) {
   locationsArr.push(location); 
 }
 	
 function shuffle(locationsArr) {
 
-    for(
-         let j, x, i = locationsArr.length; i; 
+    for(let j, x, i = locationsArr.length; i;
          j = parseInt(Math.random() * i), 
          x = locationsArr[--i], 
          locationsArr[i] = locationsArr[j], 
@@ -34,4 +33,3 @@ function shuffle(locationsArr) {
 let randomLoc = shuffle(locationsArr);
 alert(randomLoc);
 
-//setInterval(updateRound, 20)
