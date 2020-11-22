@@ -40,10 +40,19 @@ body {
     margin-left: -5px;
     margin-right: 20px;
 }
-#confirm_button {
+#confirmButton {
     font-family: 'Roboto Slab', serif;
-    font-size: 40px;
+    font-size: 15px;
     margin-bottom: 0;
     margin-top: 0;
     margin-left: -5px;
+    margin-right: 10px;
+}
+#continueButton {
+    font-family: 'Roboto Slab', serif;
+    font-size: 15px;
+    margin-bottom: 0;
+    margin-top: 0;
+    margin-left: -5px;
+    margin-right: 10px;
 }
