@@ -11,13 +11,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;600&display=swap" rel="stylesheet"> 
     <script src="map_script.js"></script>
   </head>
-  <body>
+  <body onload="initGameProcess()">
     <div id="game_map"></div>
     <div id="game_panorama"></div>
     <div id="UI">
-      <p id='UI_element'>Раунд:<p id='round'>1</p></p>
-      <p id='UI_element'>Счет:<p id='score'>0</p></p>
-      <input id='confirm_button' value="Подтвердить" onclick="" type="button">
+      <p id='UI_element'>Раунд:<p id='round'>1</p>
+      <p id='UI_element'>Счет:<p id='score'>0</p>
+      <input type="button" value="Подтвердить" id='confirmButton', onclick="showDistance()">
+      <input type="button" value="Продолжить" id='continueButton', disabled=false>
     </div>
   </body>
 </html>
