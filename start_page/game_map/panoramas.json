@@ -1,0 +1,34 @@
+{
+  "allCities": [
+    {
+      "lat": 55.7538594,
+      "lng": 37.6206391,
+      "name": "Moscow"
+    },
+    {
+      "lat": 59.9395103,
+      "lng": 30.3151588,
+      "name": "Saint_Petersburg"
+    },
+    {
+      "lat": 55.7989683,
+      "lng": 49.1047278,
+      "name": "Kazan"
+    },
+    {
+      "lat": 56.326008,
+      "lng": 44.0045733,
+      "name": "Nizhny_Novgorod"
+    },
+    {
+      "lat": 53.2037017,
+      "lng": 50.1111999,
+      "name": "Samara"
+    },
+    {
+      "name": "Ekaterinburg",
+      "lng": 60.6044939,
+      "lat": 56.8387546
+    }
+  ]
+}

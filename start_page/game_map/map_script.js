@@ -11,20 +11,36 @@ let distance;
 let score;
 let moscow = {lat: 55.7538594, lng: 37.6206391};
 let roundsCount = 5; // Костыль до момента пока не сделаем выбор режима
-let locations = new Map([
-    ["Moscow", {lat: 55.7538594, lng: 37.6206391}],
-    ["Saint Petersburg", {lat: 59.9395103, lng: 30.3151588}],
-    ["Kazan", {lat: 55.7989683, lng: 49.1047278}],
-    ["Nizhny Novgorod", {lat: 56.326008, lng: 44.0045733}],
-    ["Samara", {lat: 53.2037017, lng: 50.1111999}],
-    ["Ekaterinburg", {lat: 56.8387546, lng: 60.6044939}],
-    ["Irkutsk", {lat: 52.2800306, lng: 104.2816579}],
-    ["Sochi", {lat: 43.6716604, lng: 40.2966411}],
-    ["Yaroslavl", {lat: 57.6190439, lng: 39.8714151}],
-    ["Vladivostok", {lat: 43.1132434, lng: 131.8907829}],
-    ["Kaliningrad", {lat: 54.706665, lng: 20.5113333}],
-    ["Arkhangelsk", {lat: 64.5439575, lng: 40.5107735}]
-]);
+//console.log(     createLocations(5, "allCities")     )
+
+let locations = new Map(createLocations(5, "allCities"));
+console.log(locations)
+
+function createLocations(quantity, teg) {
+    cities = JSON.parse(require('fs').readFileSync('panoramas.json').toString())[teg];
+    arr = randomArray(quantity, cities.length);
+    locations1 = new Array();
+    for (let i = 0; i < arr.length; i++) {
+        index = arr[i]
+        locations1.push([cities[index].name, {lat: cities[index].lat, lng: cities[index].lng}]);
+    }
+    return locations1
+}
+
+function randomArray(quantity_need, length) {
+    arr = new Array();
+    for (let i = 0; i < quantity_need; i++) {
+        city = Math.floor(Math.random() * (length));
+        if (arr.indexOf(city) == -1) {
+            arr.push(city)
+        } else {
+            i--
+        }
+    }
+    return arr
+}
+initGameProcess()
+
 
 function initGameProcess(gameInfo) {
     // let gameMode = gameInfo.get('gameMode');
@@ -34,6 +50,7 @@ function initGameProcess(gameInfo) {
     // initGameMap(locations[locationNumber]);
     locations = Array.from(locations.values())
     shuffle(locations)
+    console.log(locations)
     latLngA = locations[0]
     initGameMap(latLngA)
 
@@ -56,7 +73,7 @@ function initGameProcess(gameInfo) {
         roundCounter += 1;
         if (roundCounter > roundsCount) {
             alert("Игра завершена");
-            window.location='../index.html';
+            window.location = '../index.html';
         }
         updateRound();
         updateMap();
