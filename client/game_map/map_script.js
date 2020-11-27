@@ -13,8 +13,20 @@ let moscow = {lat: 55.7538594, lng: 37.6206391};
 let roundsCount = 5; // Костыль до момента пока не сделаем выбор режима
 //console.log(     createLocations(5, "allCities")     )
 
-let locations = new Map(createLocations(5, "allCities"));
-console.log(locations)
+let locations = new Map([
+    ["Moscow", {lat: 55.7538594, lng: 37.6206391}],
+    ["Saint Petersburg", {lat: 59.9395103, lng: 30.3151588}],
+    ["Kazan", {lat: 55.7989683, lng: 49.1047278}],
+    ["Nizhny Novgorod", {lat: 56.326008, lng: 44.0045733}],
+    ["Samara", {lat: 53.2037017, lng: 50.1111999}],
+    ["Ekaterinburg", {lat: 56.8387546, lng: 60.6044939}],
+    ["Irkutsk", {lat: 52.2800306, lng: 104.2816579}],
+    ["Sochi", {lat: 43.6716604, lng: 40.2966411}],
+    ["Yaroslavl", {lat: 57.6190439, lng: 39.8714151}],
+    ["Vladivostok", {lat: 43.1132434, lng: 131.8907829}],
+    ["Kaliningrad", {lat: 54.706665, lng: 20.5113333}],
+    ["Arkhangelsk", {lat: 64.5439575, lng: 40.5107735}]
+]);
 
 
 
