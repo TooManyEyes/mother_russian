@@ -16,30 +16,8 @@ let roundsCount = 5; // Костыль до момента пока не сде�
 let locations = new Map(createLocations(5, "allCities"));
 console.log(locations)
 
-function createLocations(quantity, teg) {
-    cities = JSON.parse(require('fs').readFileSync('panoramas.json').toString())[teg];
-    arr = randomArray(quantity, cities.length);
-    locations1 = new Array();
-    for (let i = 0; i < arr.length; i++) {
-        index = arr[i]
-        locations1.push([cities[index].name, {lat: cities[index].lat, lng: cities[index].lng}]);
-    }
-    return locations1
-}
 
-function randomArray(quantity_need, length) {
-    arr = new Array();
-    for (let i = 0; i < quantity_need; i++) {
-        city = Math.floor(Math.random() * (length));
-        if (arr.indexOf(city) == -1) {
-            arr.push(city)
-        } else {
-            i--
-        }
-    }
-    return arr
-}
-initGameProcess()
+
 
 
 function initGameProcess(gameInfo) {
@@ -73,7 +51,7 @@ function initGameProcess(gameInfo) {
         roundCounter += 1;
         if (roundCounter > roundsCount) {
             alert("Игра завершена");
-            window.location = '../index.html';
+            window.location = '../start_page/index.html';
         }
         updateRound();
         updateMap();
