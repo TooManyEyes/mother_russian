@@ -13,7 +13,7 @@ console.log(__dirname)
 app.use(express.static(path.join(__dirname,'main_page/css')))
 app.use(express.static(path.join(__dirname,'main_page/img')))
 app.use(express.static(path.join(__dirname,'main_page/js')))
-
+app.use(express.static(path.join(__dirname, 'game_map')))
 
 
 app.listen(PORT, ()=>{

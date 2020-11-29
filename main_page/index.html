@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
+    <style>
+        a {
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: none;
+        }
+    </style>
     <meta charset="UTF-8">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;600&display=swap" rel="stylesheet">
@@ -21,7 +29,9 @@
         <p class="lead text-muted under-logo-text">интерактивное изучение географии родной страны</p>
         <hr class="under_logo-hr">
         <p style="margin-top: 20px">
+            <a href="/start_game">
             <button class="logo-button" onclick="goToMap()">быстрая игра</button>
+            </a>
             <button class="logo-button" onclick="scrollToMods()">режимы</button>
             <button class="logo-button">рекорды</button>
             <button class="logo-button">о проекте</button>
@@ -51,9 +61,11 @@
                             </div>
                             <div class="card-footer bg-transparent border-0">
                                 <div class="d-flex justify-content-between align-items-center align-bottom">
-                                    <div class="btn-group">
-                                        <button class="btn btn-sm  play-button ">сыграть</button>
+                                    <a href="/game">
+                                    <div class="btn-group"  >
+                                        <button class="btn btn-sm  play-button " >сыграть</button>
                                     </div>
+                                    </a>
                                     <small class="text-muted">5 локаций</small>
                                 </div>
                             </div>
