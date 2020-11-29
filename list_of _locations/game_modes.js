@@ -1,5 +1,10 @@
 let game_modes = {
-	'Game_mode1': [
+	'Game_mode1': {
+	    name: 'Города',
+	    locationsNumb: 5,
+	    scoreModifier: 1,
+        mapCentre:[8, { lat: 55.7538594, lng: 37.6206391 }],
+	    locations:[
 		{
 			'name': 'Москва',
 			'latLng': { lat: 55.7538594, lng: 37.6206391 }
@@ -84,8 +89,13 @@ let game_modes = {
 			'name': 'Петропавловск-Камчатский',
 			'latLng': { lat: 53.0238876, lng: 158.6388855 }
 		}
-	],
-	'Game_mode2': [
+	]},
+	'Game_mode2': {
+        name: 'Мосты Питербурга',
+        locationsNumb: 5,
+        scoreModifier: 1,
+        mapCentre: [16, { lat: 59.9395103, lng: 30.3151588 }],
+	    locations: [
 		{
 			'name': 'Троицкий мост',
 			'latLng': { lat: 59.9468837, lng: 30.3291378 }
@@ -166,8 +176,13 @@ let game_modes = {
 			'name': 'Синий мост',
 			'latLng': { lat: 59.9315095, lng: 30.3082482 }
 		}
-	],
-	'Game_mode3': [
+	]},
+	'Game_mode3': {
+        name: 'Золотое кольцо',
+        locationsNumb: 5,
+        scoreModifier: 1,
+        mapCentre: [8, { lat: 55.7538594, lng: 37.6206391 }],
+        locations: [
 		{
 			'name': 'Сергиев Посад',
 			'latLng': { lat: 56.310116, lng: 38.1298335 }
@@ -200,5 +215,5 @@ let game_modes = {
 			'name': 'Владимир',
 			'latLng': { lat: 56.1266469, lng: 40.3970226 }
 		}
-	]
+	]}
 };
