@@ -4,5 +4,5 @@ function scrollToMods(){
 }
 
 function goToMap(){
-    document.location.href = "game_map/game.html";
+    document.location.href = "../game_map/game.html";
 }

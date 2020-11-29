@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Street View split-map-panes</title>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBThqORgfcyuTU1w1HJsRaMqMUT7Pz47dw&map_ids=fd2fd1d023ffb94c&callback=initGameMap" defer></script>
+    <link rel="stylesheet" type="text/css" href="css/game.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;600&display=swap" rel="stylesheet">
+    <script src="js/game.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+<body onload="initGameProcess()">
+    <div id="game-panorama" class="panorama">
+    </div>
+    <div class="container info-board-costil ">
+        <div class="row justify-content-md-end">
+        <div class="info-board rounded text-center container col-md-auto" style="margin-right: 2px">
+            <div class="row justify-content-md-end">
+                <div class="game-mode-name col-md-auto ">
+                    <p class="UI-text pt-2">режим игры:<p class="UI-text bottom" id='game-mode'>города</p>
+                </div>
+                <div class="round-count col-md-auto">
+                    <p class="UI-text pt-2">раунд:<p class="UI-text bottom" id='round'>1</p>
+                </div>
+                <div class="score col-md-auto">
+                    <p class="UI-text pt-2">счет:<p class="UI-text bottom" id='score'>0</p>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <div class="UI">
+        <div id="game-map" class="map rounded"></div>
+        <div class="pt-2 text-center">
+            <button  id='confirmButton' class="UI-button" onclick="showDistance()">подтвердить</button>
+            <button disabled  id='continueButton' class="UI-button" onclick="showDistance()">продолжить</button>
+        </div>
+    </div>
+
+
+</body>
+</html>
