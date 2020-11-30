@@ -12,8 +12,10 @@ let distance;
 let score;
 let moscow = {lat: 55.7538594, lng: 37.6206391};
 let roundsCount = 5; // Костыль до момента пока не сделаем выбор режима
-let locations = new Map(Object.entries(JSON.parse(localStorage.getItem('locations'))))
-let gameModeInfo = new Map(Object.entries(JSON.parse(localStorage.getItem('info'))))
+let locations = new Map(Object.entries(JSON.parse(localStorage.getItem('locations'))));
+let gameModeInfo = new Map(Object.entries(JSON.parse(localStorage.getItem('info'))));
+let gameModeName;
+updateGameModeName();
 
 function initGameProcess() {
     // let gameMode = gameInfo.get('gameMode');
@@ -124,12 +126,23 @@ function updateMap() {
     });
 }
 
+
 function updateRound() {
     round = document.getElementById('round');
     var i = parseInt(round.textContent)
     round.textContent = i + 1;
 
 }
+
+function updateScore() {
+    if (20000 - distance >= 0) {
+        console.log(score)
+        score = document.getElementById('score');
+        var j = parseInt(score.textContent);
+        score.textContent = j + 1;
+    }
+}
+
 
 function showDistance() {  // A - координаты точки панорамы, B - координаты точки, которую поставил игрок
     var lineSymbol = {
@@ -153,14 +166,6 @@ function showDistance() {  // A - координаты точки панорам
         }],
     }); // рисует линию между двумя маркерами
     distance = google.maps.geometry.spherical.computeDistanceBetween(markerA.getPosition(), markerB.getPosition()); // расстояние между маркерами в метрах
-}
-
-function updateScore() {
-    if (20000 - distance >= 0) {
-        score = document.getElementById('score');
-        var j = parseInt(score.textContent);
-        score.textContent = j + 1;
-    }
 }
 
 function shuffle(array) {

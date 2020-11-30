@@ -20,8 +20,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f7dc7825-04dc-489a-8f65-4e91c811e73c" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/game_map/game.html" beforeDir="false" afterPath="$PROJECT_DIR$/game_map/game.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/game_map/js/game.js" beforeDir="false" afterPath="$PROJECT_DIR$/game_map/js/game.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main_page/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/main_page/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main_page/css/demo.css" beforeDir="false" afterPath="$PROJECT_DIR$/main_page/css/demo.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main_page/demo.html" beforeDir="false" afterPath="$PROJECT_DIR$/main_page/demo.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main_page/index2.html" beforeDir="false" afterPath="$PROJECT_DIR$/main_page/index2.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main_page/js/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/main_page/js/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -55,6 +59,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -67,6 +72,7 @@
       <option name="presentableId" value="Default" />
       <updated>1606719868404</updated>
       <workItem from="1606719869611" duration="11208000" />
+      <workItem from="1606733004131" duration="5874000" />
     </task>
     <servers />
   </component>
@@ -83,11 +89,16 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="361" y="150" key="Vcs.Push.Dialog.v2" timestamp="1606731544171">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="361" y="150" key="Vcs.Push.Dialog.v2/0.0.1536.834@0.0.1536.834" timestamp="1606731544171" />
+    <state x="616" y="237" key="run.anything.popup" timestamp="1606733784591">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="616" y="237" key="run.anything.popup/0.0.1920.1050@0.0.1920.1050" timestamp="1606733784591" />
   </component>
 </project>
