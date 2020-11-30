@@ -14,14 +14,14 @@
     <script src="js/index.js"></script>
 
 </head>
-<body onload="al()">
+<body onload="setGameMode('Towns')">
 <section class="logo text-center">
     <div class="container">
         <h1 class="lead logo-text">Mother Russia</h1>
         <p class="lead text-muted under-logo-text">интерактивное изучение географии родной страны</p>
         <hr class="under_logo-hr">
         <p style="margin-top: 20px">
-            <button class="logo-button" onclick="goToMap()">быстрая игра</button>
+            <button class="logo-button" onclick="setGameMode('Towns'); goToMap()">быстрая игра</button>
             <button class="logo-button" onclick="scrollToMods()">режимы</button>
             <button class="logo-button">рекорды</button>
             <button class="logo-button">о проекте</button>
@@ -52,7 +52,7 @@
                             <div class="card-footer bg-transparent border-0">
                                 <div class="d-flex justify-content-between align-items-center align-bottom">
                                     <div class="btn-group">
-                                        <button class="btn btn-sm  play-button ">сыграть</button>
+                                        <button class="btn btn-sm  play-button" onclick="setGameMode('Bridges'); goToMap()">сыграть</button>
                                     </div>
                                     <small class="text-muted">5 локаций</small>
                                 </div>
@@ -72,9 +72,9 @@
                             <div class="card-footer bg-transparent border-0">
                                 <div class="d-flex justify-content-between align-items-center align-bottom">
                                     <div class="btn-group">
-                                        <button class="btn btn-sm play-button">сыграть</button>
+                                        <button class="btn btn-sm play-button" onclick="setGameMode('Ring'); goToMap()">сыграть</button>
                                     </div>
-                                    <small class="text-muted">10 локаций</small>
+                                    <small class="text-muted">5 локаций</small>
                                 </div>
                             </div>
                         </div>
