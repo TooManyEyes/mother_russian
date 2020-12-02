@@ -81,8 +81,9 @@ function initGameProcess() {
             // google.maps.event.clearListeners(map, 'click');
             // updateScore();
         }
-        if (buttonStatus === 0) { //Продолжить
+        else { //Продолжить
             buttonStatus += 1;
+            roundCounter += 1;
             gameButton.innerText = 'подтвердить';
             // updateRound();
             // updateMap();
