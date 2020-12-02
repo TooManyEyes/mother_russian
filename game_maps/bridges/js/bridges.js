@@ -24,15 +24,12 @@ let gameModeBridgesLocations = new Map([
 
 
 /*--------------------------------------------------------------Переменные-------------------------------------------------------------------------------*/
-
-
-
-
-
-
-
-
-
+let hintCount = 0;
+let roundCounter = 0;
+let locationNumber = 0;
+let buttonStatus = 1; // Отслеживает какую кнопку рядом с картой нужно показывать в данный момент см. функцию управления gameButton
+let saintPetersburg = {lat:59.9132206, lng: 30.169971};
+let markerB;
 
 
 /*----------------------------------------------------------------Локации--------------------------------------------------------------------------------*/
@@ -42,13 +39,11 @@ let locations = [
         latLng: {lat: 59.9282183, lng: 30.2949978},
         description: 'Поцелуев мост — это одно из самых романтичных мест в Санкт-Петербурге, здесь часто назначаются свидания, а прекрасный вид на Исаакиевский собор привлекает художников.' +
             'Поцелуев мост увешан замочками, которые оставляют влюбленные, из-за их огромного числа рядом даже была установлена специальная конструкция',
-        hints: ['Говорили, что в XVIII веке, когда граница города доходила только до реки Мойки, мост служил местом прощаний и встреч', 'Если при расставании поцеловать человека на этом месте, то он обязательно вернётся'],
     },
     {
         name: 'Ушаковский мост',
         latLng: {lat: 59.982548, lng: 30.3000831},
         description: 'Старое название моста – Строгановский. Это имя он получил в честь расположенной рядом дачи графа А.С. Строганова. После перестройки моста в 1954 году он был назван Ушаковским в память о великом русском флотоводце Ф. Ф. Ушакове.',
-        hints: ['Этот мост переименовывали','Он разводной']
     },
 
     /*--Пример-- */
@@ -61,44 +56,49 @@ let locations = [
     },
     */
 ]
+
 /*--------------------------------------------------------------Игровой процесс--------------------------------------------------------------------------*/
 
 
 function initGameProcess() {
     shuffle(locations)
     locations = locations.slice(0, 5)
-    console.log(locations)
-    latLngA = locations[0]
-    initGameMap(latLngA)
+
+    //Инициализация карты -------------------------------------------------
+
 
     //Инициализация кнопок ------------------------------------------------
     let gameButton = document.getElementById('gameButton');
     let hintButton = document.getElementById('hintButton');
     //---------------------------------------------------------------------
 
-
-
-
-    confirmButton.addEventListener('click', function () { // Подтвердить
-        confirmButton.disabled = true;
-        continueButton.disabled = false;
-        updateScore();
-        locationNumber += 1;
-        google.maps.event.clearListeners(map, 'click');
-    });
-
-    continueButton.addEventListener('click', function () { // Продолжить
-        latLngA = locations[locationNumber];
-        confirmButton.disabled = false;
-        continueButton.disabled = true;
-        roundCounter += 1;
-        if (roundCounter > roundsCount) {
-            alert("Игра завершена");
-            window.location='../main_page/index.html';
+    //Добавляем обработку событий -----------------------------------------
+    gameButton.addEventListener('click', function () {
+        if (buttonStatus === 1) {
+            buttonStatus -= 1;
+            gameButton.innerText = 'продолжить';
+            locationNumber += 1;
+            // google.maps.event.clearListeners(map, 'click');
+            // updateScore();
         }
-        updateRound();
-        updateMap();
+        if (buttonStatus === 0) { //Продолжить
+            buttonStatus += 1;
+            gameButton.innerText = 'подтвердить';
+            // updateRound();
+            // updateMap();
+            if (roundCounter > 5) {
+                alert("Игра завершена");
+                window.location = '../main_page/index.html';
+            }
+        }
     });
+
+
+    hintButton.addEventListener('click', function () {
+
+    });
+    //---------------------------------------------------------------------
+
 }
 
 
@@ -112,6 +112,37 @@ function shuffle(array) {
     }
 }
 
-function getHint(){
+function getHint() {
+  //Нарисовать на карте круг с радиусом 3000м
+}
 
+function initGameMap() {
+    map = new google.maps.Map(document.getElementById("game-map"), {
+        zoom: 8,
+        center: saintPetersburg,
+        mapTypeId: "roadmap",
+        disableDefaultUI: true,
+        clickableIcons: false,
+    });
+
+    google.maps.event.addListener(map, "click", function (event) {
+        latLngB = event.latLng;
+        if (markerB && markerB.setMap) {
+            markerB.setMap(null);
+        }
+        markerB = new google.maps.Marker({
+            position: latLngB,
+            map: map,
+            Clickable: false,
+        });
+    });
+
+    panorama = new google.maps.StreetViewPanorama(document.getElementById("game-panorama"), {
+            position: locations[0].latLng,
+            pov: {heading: 34, pitch: 10},
+            addressControl: false,
+            enableCloseButton: false,
+            disableDefaultUI: true,
+        });
+    map.setStreetView(panorama);
 }

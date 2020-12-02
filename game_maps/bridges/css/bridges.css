@@ -7,8 +7,7 @@ body {
 .panorama{
     width: 100%;
     height: 100%;
-    z-index: 1;
-    position:relative;
+    position: absolute;
 }
 
 .map{
@@ -16,6 +15,17 @@ body {
     height: 80%;
     z-index: 100;
 }
+
+.hint-board{
+
+    z-index: 100;
+    opacity: 1;
+    position: absolute;
+    top: 120px;
+    right: 30px;
+    background: #bc3838;
+}
+
 
 
 .info-board{
@@ -56,7 +66,7 @@ body {
 
 .UI{
     opacity: 0.5;
-    bottom:25px;
+    bottom:20px;
     right: 30px;
     position: absolute;
     z-index: 100;
@@ -73,18 +83,10 @@ body {
 }
 
 .UI:hover{
-    bottom:70px;
-    right: 80px;
+
     opacity: 1;
-    -webkit-transform: scale(1.3,1.3);
-    -webkit-transition-timing-function: ease-out;
-    -webkit-transition-duration: 300ms;
-    -moz-transform: scale(1.2,1.2);
-    -moz-transition-timing-function: ease-out;
-    -moz-transition-duration: 300ms;
-    -webkit-transform-origin: 50% 50%;
-    -ms-transform-origin: 50% 50%;
-    transform-origin: 50% 50%;
+    height: 25vw;
+    width: 30vw;
 
 }
 
