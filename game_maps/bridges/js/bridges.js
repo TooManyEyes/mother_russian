@@ -1,4 +1,4 @@
-let gameModeBridgesLocations = new Map([
+let locationsCoordinates = [
     ['Литейный мост', {lat: 59.9508667, lng: 30.3493337}],
     ['Дворцовый мост', {lat: 59.9410713, lng: 30.3082885}],
     ['Троицкий мост', {lat: 59.9468837, lng: 30.3291378}],
@@ -20,7 +20,7 @@ let gameModeBridgesLocations = new Map([
     ['Поцелуев мост', {lat: 59.9282183, lng: 30.2949978}],
     ['Львиный Мостик', {lat: 59.9271083, lng: 30.3015032}],
     ['Синий мост', {lat: 59.9315095, lng: 30.3082482}],
-]);
+];
 
 
 /*--------------------------------------------------------------Переменные-------------------------------------------------------------------------------*/
@@ -30,7 +30,8 @@ let locationNumber = 0;
 let buttonStatus = 1; // Отслеживает какую кнопку рядом с картой нужно показывать в данный момент см. функцию управления gameButton
 let saintPetersburg = {lat:59.9132206, lng: 30.169971};
 let markerB;
-
+let markers = [];
+let test = 0;
 
 /*----------------------------------------------------------------Локации--------------------------------------------------------------------------------*/
 let locations = [
@@ -61,6 +62,7 @@ let locations = [
 
 
 function initGameProcess() {
+
     shuffle(locations)
     locations = locations.slice(0, 5)
 
@@ -99,8 +101,8 @@ function initGameProcess() {
 
     });
     //---------------------------------------------------------------------
-
 }
+/*--------------------------------------------------------------Инициализация маркеров-------------------------------------------------------------------*/
 
 
 /*-----------------------------------------------------------------Служебные функции---------------------------------------------------------------------*/
@@ -117,13 +119,13 @@ function getHint() {
   //Нарисовать на карте круг с радиусом 3000м
 }
 
-function initGameMap() {
-    map = new google.maps.Map(document.getElementById("game-map"), {
+function initMap() {
+    let map = new google.maps.Map(document.getElementById("game-map"), {
         zoom: 8,
         center: saintPetersburg,
-        mapTypeId: "roadmap",
         disableDefaultUI: true,
         clickableIcons: false,
+        mapId: "757ff880503db59",
     });
 
     google.maps.event.addListener(map, "click", function (event) {
@@ -145,5 +147,37 @@ function initGameMap() {
             enableCloseButton: false,
             disableDefaultUI: true,
         });
+
+
+    for (let i = 0; i < locationsCoordinates.length; i++) {
+        const bridge = locationsCoordinates[i];
+        markers.push( new google.maps.Marker({
+            position: bridge[1],
+            title: bridge[0],
+            map,
+            icon: 'img/bridges.png',
+            clickable: true,
+        }));
+    }
+
+    google.maps.event.addListener(map, 'zoom_changed', function() {
+        let zoom = map.getZoom();
+        if (zoom < 12) {
+            for (let i = 0; i < markers.length; i++) {
+                markers[i].setVisible(false);
+                markers[i].addListener("click", function (event) {
+                    test +=1;
+                });
+                }
+            }
+         else {
+            for (let i = 0; i < markers.length; i++) {
+                markers[i].setVisible(true);
+            }
+        }
+    })
+
+
+
     map.setStreetView(panorama);
 }

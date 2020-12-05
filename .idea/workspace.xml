@@ -19,14 +19,12 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f7dc7825-04dc-489a-8f65-4e91c811e73c" name="Default Changelist" comment="">
+    <list default="true" id="f7dc7825-04dc-489a-8f65-4e91c811e73c" name="Default Changelist" comment="оправил баг с кнопками">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/game_map/game.html" beforeDir="false" afterPath="$PROJECT_DIR$/game_map/game.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/game_map/js/game.js" beforeDir="false" afterPath="$PROJECT_DIR$/game_map/js/game.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main_page/css/demo.css" beforeDir="false" afterPath="$PROJECT_DIR$/main_page/css/demo.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main_page/demo.html" beforeDir="false" afterPath="$PROJECT_DIR$/main_page/demo.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main_page/index2.html" beforeDir="false" afterPath="$PROJECT_DIR$/main_page/index2.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main_page/js/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/main_page/js/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/game_maps/bridges/bridges.html" beforeDir="false" afterPath="$PROJECT_DIR$/game_maps/bridges/bridges.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/game_maps/bridges/css/bridges.css" beforeDir="false" afterPath="$PROJECT_DIR$/game_maps/bridges/css/bridges.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/game_maps/bridges/debug.log" beforeDir="false" afterPath="$PROJECT_DIR$/game_maps/bridges/debug.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/game_maps/bridges/js/bridges.js" beforeDir="false" afterPath="$PROJECT_DIR$/game_maps/bridges/js/bridges.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,9 +34,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="CSS File" />
-        <option value="JavaScript File" />
         <option value="HTML File" />
+        <option value="JavaScript File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -51,6 +49,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1l02pGlZgcILsY35iNLVNhX1UPU" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -59,9 +58,15 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/game_maps/bridges/css" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="settings.editor.selected.configurable" value="preferences.general" />
     <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\mother_russian\game_maps\bridges\css" />
+    </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -73,7 +78,34 @@
       <updated>1606719868404</updated>
       <workItem from="1606719869611" duration="11208000" />
       <workItem from="1606733004131" duration="5874000" />
+      <workItem from="1606919824870" duration="7761000" />
+      <workItem from="1606930738314" duration="14509000" />
+      <workItem from="1606987601070" duration="12237000" />
+      <workItem from="1607084692863" duration="2276000" />
+      <workItem from="1607161376171" duration="460000" />
     </task>
+    <task id="LOCAL-00001" summary="Нашкодил как черт">
+      <created>1606933323639</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1606933323639</updated>
+    </task>
+    <task id="LOCAL-00002" summary="опять нашкодил">
+      <created>1606945847279</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1606945847279</updated>
+    </task>
+    <task id="LOCAL-00003" summary="оправил баг с кнопками">
+      <created>1606946818754</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1606946818754</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -91,14 +123,33 @@
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Нашкодил как черт" />
+    <MESSAGE value="опять нашкодил" />
+    <MESSAGE value="оправил баг с кнопками" />
+    <option name="LAST_COMMIT_MESSAGE" value="оправил баг с кнопками" />
+  </component>
   <component name="WindowStateProjectService">
-    <state x="361" y="150" key="Vcs.Push.Dialog.v2" timestamp="1606731544171">
-      <screen x="0" y="0" width="1536" height="834" />
-    </state>
-    <state x="361" y="150" key="Vcs.Push.Dialog.v2/0.0.1536.834@0.0.1536.834" timestamp="1606731544171" />
-    <state x="616" y="237" key="run.anything.popup" timestamp="1606733784591">
+    <state x="55" y="153" width="1736" height="866" key="DiffContextDialog" timestamp="1606991515042">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="616" y="237" key="run.anything.popup/0.0.1920.1050@0.0.1920.1050" timestamp="1606733784591" />
+    <state x="55" y="153" width="1736" height="866" key="DiffContextDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1606991515042" />
+    <state x="809" y="226" key="RollbackChangesDialog" timestamp="1606940967951">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="809" y="226" key="RollbackChangesDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1606940967951" />
+    <state x="461" y="155" key="SettingsEditor" timestamp="1606921351229">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="461" y="155" key="SettingsEditor/0.0.1920.1050@0.0.1920.1050" timestamp="1606921351229" />
+    <state x="451" y="189" key="Vcs.Push.Dialog.v2" timestamp="1606933328321">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="361" y="150" key="Vcs.Push.Dialog.v2/0.0.1536.834@0.0.1536.834" timestamp="1606731544171" />
+    <state x="451" y="189" key="Vcs.Push.Dialog.v2/0.0.1920.1050@0.0.1920.1050" timestamp="1606933328321" />
+    <state x="616" y="237" key="run.anything.popup" timestamp="1606917877229">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="616" y="237" key="run.anything.popup/0.0.1920.1050@0.0.1920.1050" timestamp="1606917877229" />
   </component>
 </project>
