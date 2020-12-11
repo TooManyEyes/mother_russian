@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBThqORgfcyuTU1w1HJsRaMqMUT7Pz47dw&map_ids=757ff880503db59"
+            defer></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Vollkorn+SC:wght@400;600&display=swap" rel="stylesheet">
+    <title>Game Editor</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/editor.css">
+    <link rel="script" href="js/bootstrap.js">
+    <script src="js/editor.js"></script>
+
+</head>
+<body onload="initMap()">
+    <div class="UI">
+        <div class="container info-board">
+            <div class="">
+                <p class="mr-2 ">
+                    Название карты
+                    <input maxlength="30" size='auto'>
+                </p>
+            </div>
+            <div class="">
+                <p class="mr-2 pt-2">
+                    Раундов в игре
+                    <input type="number" name="roundCount" min="1" max="20" class="">
+                </p>
+            </div>
+            <div class="">
+                <p>Краткое описание:</p>
+                <textarea name="comment" cols="42" rows="3"></textarea>
+            </div>
+            <div>
+                <button onclick="generateMap()" class="btn-danger">Сгенирировать код карты</button>
+            </div>
+            <hr>
+            <div>
+                <p>Чтобы добавить локацию найдите ваше место на карте и перейдите в режим панорамы</p>
+                <p>Список локаций:</p>
+                <div id="locations">
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="panorama" id="panorama">
+        <div class="div">
+            <button id='addLocationCord' class="UI-button text-center justify-content-center" onclick="addLocation()">
+                Добавить локацию
+            </button>
+        </div>
+        <p id='addLocationName' style="background: #d44041; color: #FFF0DA; padding-left: 5px">
+            Введите название локации
+            <input type="text" id="inputName" name="roundName" maxlength="50" oninput="changeName()">
+        </p>
+    </div>
+
+
+    <div class="map" id="map"></div>
+
+
+</body>
+</html>
