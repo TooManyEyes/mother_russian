@@ -36,3 +36,7 @@ def create_new_map(request):
 def start_game(request, game_mode_id):
     game_mode = GameMode.objects.get(id=game_mode_id)
     return render(request, 'game.html', {"game_mode": game_mode})
+
+
+def start_game_explorer_mode(request):
+    return render(request, 'explorer_mode.html')

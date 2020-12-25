@@ -13,22 +13,50 @@ let listener;
 let line;
 let panorama;
 let hintCircle;
-let locations;
+let locations =[];
 let distance;
 let markerB;
 let markerA;
 let latLngA;
 let latLngB;
 
-/*--------------------------------------------------------------Игровой процесс--------------------------------------------------------------------------*/
-function initGameProcess(locations_row) {
 
+function createLocations(){
+for (let i = 0; i < 5; i++){
+    TryRandomLocation(HandleCallback)
+}
+}
+
+function TryRandomLocation(callback){
+    let sv = new google.maps.StreetViewService();
+    let latLng = new google.maps.LatLng(getRandomArbitrary(46, 60), getRandomArbitrary(28, 70));
+    sv.getPanorama({
+        location: latLng,
+        preference: 'nearest',
+        source: 'outdoor',
+        radius: 100000}, callback)
+}
+
+function HandleCallback(data, status) {
+    if (status == 'OK') {
+    locations.push(data.location.latLng.toJSON());
+    }
+    else {
+      TryRandomLocation(HandleCallback);
+    }
+}
+
+function getRandomArbitrary(min, max) {
+  return Math.random() * (max - min) + min;
+}
+
+
+/*--------------------------------------------------------------Игровой процесс--------------------------------------------------------------------------*/
+function initGameProcess() {
     //Перемешивание локаций и инициализация карты--------------------------
+    createLocations();
+
     console.log(locations)
-    shuffle(locations);
-    locations = locations.slice(0, 5);
-    latLngA = locations[0]
-    initMap();
     //---------------------------------------------------------------------
 
 
@@ -51,12 +79,14 @@ function initGameProcess(locations_row) {
             document.getElementById('gameButton').setAttribute("disabled", "true");
             if (roundCounter > 4) {
                 alert("Игра завершена");
-                location.reload()
+               window.location = "http://127.0.0.1:8000/"
+
             }
             updateRound();
             updateMap();
         }
     });
+    setTimeout(function(){ initMap()},233);
 }
 /*----------------------------------------------------------------Инициализация карты--------------------------------------------------------------------*/
 function initMap() {
@@ -82,7 +112,6 @@ function initMap() {
             Clickable: false,
         });
     });
-
     panorama = new google.maps.StreetViewPanorama(document.getElementById("game-panorama"), {
         position: locations[0],
         pov: {heading: 34, pitch: 10},
@@ -103,14 +132,6 @@ function updateMap() {
     panorama.setPosition(locations[locationNumber])
 }
 /*-----------------------------------------------------------------Служебные функции---------------------------------------------------------------------*/
-
-function shuffle(array) {
-    for (let i = array.length - 1; i > 0; i--) {
-        let j = Math.floor(Math.random() * (i + 1));
-        [array[i], array[j]] = [array[j], array[i]];
-    }
-}
-
 function showDistance() {  // A - координаты точки панорамы, B - координаты точки, которую поставил игрок
 
     let lineSymbol = {
