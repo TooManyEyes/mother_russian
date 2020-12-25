@@ -19,14 +19,14 @@
 <div class="container-fluid UI-top" id="menu">
     <!--<div class="d-none d-lg-block position-absolute UI-top-logo">Mother Russia</div>-->
     <div class="justify-content-center text-center row">
-        <button class="UI-top-btn  d-inline col-auto" role="button" id="play-btn" data-action="play"
+        <button class="UI-top-btn  d-inline col-auto" role="button" id="play-btn" data-hide="all" data-action="play"
                 data-toggle-id="mods-browser">
             <span class="UI-top-btn-text">🎮 Режимы</span>
         </button>
-        <button class="UI-top-btn  d-inline col-auto" role="button" data-action="edit" data-toggle-id="editor">
+        <button class="UI-top-btn  d-inline col-auto" role="button" data-action="edit" data-hide="all" data-toggle-id="editor">
             <span class="UI-top-btn-text">🔨 Редактор</span>
         </button>
-        <button class="UI-top-btn  d-inline col-auto" role="button" data-action="about" data-toggle-id="about">
+        <button class="UI-top-btn  d-inline col-auto" role="button" data-action="about" data-hide="all" data-toggle-id="about">
             <span class="UI-top-btn-text">👋 О проекте</span>
         </button>
     </div>
@@ -34,26 +34,25 @@
 <div class="mods-browser" id="mods-browser" hidden>
     <div class="container-fluid pt-5 position-relative">
         <div class="justify-content-center text-center row mb-3" style="font-size: 25px">
-            <button class="UI-top-btn  d-inline col-auto" data-toggle-id="standard-mods">
-                <span class="UI-md-btn-text">Стандартные</span>
+            <button class="UI-top-btn  d-inline col-auto" data-hide="mods" data-toggle-id="standard-mods">
+                <span class="UI-md-btn-text" >Стандартные</span>
             </button>
-            <button class="UI-top-btn  d-inline col-auto" role="button" data-toggle-id="users-mods">
+            <button class="UI-top-btn  d-inline col-auto" role="button" data-hide="mods" data-toggle-id="users-mods">
                 <span class="UI-md-btn-text">Пользовательские</span>
             </button>
 
         </div>
     </div>
-
-    <div class="container-fluid position-relative" id="standard-mods">
+    <div class="container-fluid position-relative"  id="standard-mods" hidden>
 
         <div class="row justify-content-center  mt-2">
             <div class="card " style="margin: 10px; width: 37rem; height: 17rem">
                 <div class="card-body">
                     <div class="row">
-                        <div class="col-sm-6 justify-content-center align-content-center">
-                            <img class="d-block" src="{% static 'img/dora3.png' %}" alt="картинка ^^" style="height: 15rem; width: 15rem">
+                        <div class="col-12 col-sm-6 justify-content-center align-content-center">
+                            <img class="d-none d-sm-block" src="{% static 'img/dora3.png' %}" alt="картинка ^^" style="height: 15rem; width: 15rem">
                         </div>
-                        <div class="col-sm-6">
+                        <div class="col-12 col-sm-6">
 
                             <h5 class="card-title">Исследование</h5>
                             <p>Свободный режим - изучайте случайные локации нашей страны.<br> Никогда не знаешь, что попадется</p>
@@ -72,7 +71,6 @@
 
                         </div>
                     </div>
-
                 </div>
             </div>
 
@@ -165,9 +163,7 @@
 
     </div>
     </div>
-
-</div>
-<div class="container position-relative" id="users-mods" hidden>
+    <div class="container position-relative" id="users-mods" hidden>
     <div class="row justify-content-center position-sticky">
         {% if game_modes.count > 0 %}
         {% for game_mode in game_modes %}
@@ -192,6 +188,7 @@
     </div>
 </div>
 </div>
+
 <div class="editor container-fluid pb-5" id="editor" hidden>
     <div class="editor-view">
         <div class="editor-map" id="editor-map">

@@ -7,12 +7,38 @@ let markerFlag = 0;
 let markerChosen;
 let markerChosenNumb;
 let userLocationsDebug = [];
+let hideElements;
+let preElem;
+
 
 document.addEventListener('click', function (event) {
+
     let btn = event.target.closest('button');
     if (!btn) return;
     let id = btn.dataset.toggleId;
+    hideElements = btn.dataset.hide;
     if (!id) return;
+    if(preElem) preElem.classList.remove("underlined");
+    event.target.classList.add("underlined");
+    preElem = event.target
+    if (hideElements == 'all'){
+        let editor = document.getElementById('editor');
+        let modsBrowser = document.getElementById('mods-browser');
+        let about = document.getElementById('about');
+        editor.hidden = true;
+        modsBrowser.hidden = true;
+        about.hidden = true;
+        let standardMods = document.getElementById('standard-mods');
+        let userMods = document.getElementById('users-mods');
+        standardMods.hidden = true;
+        userMods.hidden = true;
+    }
+    if (hideElements == 'mods'){
+        let standardMods = document.getElementById('standard-mods');
+        let userMods = document.getElementById('users-mods');
+        standardMods.hidden = true;
+        userMods.hidden = true;
+    }
     let elem = document.getElementById(id);
     elem.hidden = !elem.hidden;
 });
