@@ -40,3 +40,6 @@ def start_game(request, game_mode_id):
 
 def start_game_explorer_mode(request):
     return render(request, 'explorer_mode.html')
+
+def start_game_bridges(request):
+    return render(request, 'bridges.html')
