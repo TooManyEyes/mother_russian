@@ -5,6 +5,10 @@ body {
 
 }
 
+.about-link{
+    color: #dd9a94 !important;
+}
+
 *{
     animation: fade 0.5s ;
 }
