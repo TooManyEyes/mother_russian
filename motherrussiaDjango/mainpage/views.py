@@ -41,5 +41,16 @@ def start_game(request, game_mode_id):
 def start_game_explorer_mode(request):
     return render(request, 'explorer_mode.html')
 
+
 def start_game_bridges(request):
     return render(request, 'bridges.html')
+
+
+def start_game_secret(request):
+    return render(request, 'secret.html')
+
+def start_game_ring(request):
+    return render(request, 'ring.html')
+
+def start_game_kremlins(request):
+    return render(request, 'kremlins.html')

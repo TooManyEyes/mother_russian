@@ -14,7 +14,7 @@
     <title>Mother Russia</title>
 </head>
 
-<body onload="initMap()">
+<body >
 <div><p>{{game_mode.id}}</p></div>
 <div class="container-fluid UI-top" id="menu">
     <!--<div class="d-none d-lg-block position-absolute UI-top-logo">Mother Russia</div>-->
@@ -24,7 +24,7 @@
             <span class="UI-top-btn-text">🎮 Режимы</span>
         </button>
         <button class="UI-top-btn  d-inline col-auto" role="button" data-action="edit" data-hide="all"
-                data-toggle-id="editor">
+                data-toggle-id="editor" onclick="initMap()">
             <span class="UI-top-btn-text">🔨 Редактор</span>
         </button>
         <button class="UI-top-btn  d-inline col-auto" role="button" data-action="about" data-hide="all"
@@ -57,7 +57,7 @@
                         <div class="col-12 col-sm-6">
 
                             <h5 class="card-title">Исследование</h5>
-                            <p>Свободный режим - изучайте случайные локации нашей страны.<br> Никогда не знаешь, что
+                            <p>Свободный режим - изучайте случайные локации СНГ.<br> Никогда не знаешь, что
                                 попадется</p>
                         </div>
                     </div>
@@ -69,7 +69,7 @@
                                 <a href="game/explorer_mode" class="play-btn">Сыграть</a>
                             </div>
                             <div class="justify-content-end">
-                                <span class="">📍 12</span> <span class="">❤️12</span>
+                                <span class=""></span> <span class="">❤️25</span>
                             </div>
 
                         </div>
@@ -82,7 +82,7 @@
                 <!--                    <img src="img/piter.jpg" alt="альтернативный текст" class="card-img-top rounded-top">-->
                 <div class="card-body">
                     <h5 class="card-title">Мосты Санкт Петербурга</h5>
-                    <p class="card-text">Портовый город на побережье Балтийского моря, который в
+                    <p class="card-text">Петербург - портовый город на побережье Балтийского моря, который в
                         течение двух веков служил столицей Российской империи.</p>
                 </div>
                 <div class="card-footer">
@@ -113,10 +113,10 @@
                 <div class="card-footer">
                     <div class="d-flex justify-content-between align-items-center align-bottom">
                         <div class="btn-group">
-                            <a href="game/{{game_mode.id}}" class="play-btn">Сыграть</a>
+                            <a href="game/ring" class="play-btn">Сыграть</a>
                         </div>
                         <div class="justify-content-end">
-                            <span class="">📍 9</span> <span class="">❤️5</span>
+                            <span class="">📍 19</span> <span class="">❤️5</span>
                         </div>
 
                     </div>
@@ -133,10 +133,10 @@
                 <div class="card-footer">
                     <div class="d-flex justify-content-between align-items-center align-bottom">
                         <div class="btn-group">
-                            <a href="game/{{game_mode.id}}" class="play-btn">Сыграть</a>
+                            <a href="game/kremlins" class="play-btn">Сыграть</a>
                         </div>
                         <div class="justify-content-end">
-                            <span class="">📍 18</span> <span class="">❤️2</span>
+                            <span class="">📍 14</span> <span class="">❤️2</span>
                         </div>
 
                     </div>
@@ -154,16 +154,15 @@
                 <div class="card-footer">
                     <div class="d-flex justify-content-between align-items-center align-bottom">
                         <div class="btn-group">
-                            <a href="game/{{game_mode.id}}" class="play-btn">Сыграть</a>
+                            <a href="game/secret" class="play-btn">Сыграть</a>
                         </div>
                         <div class="justify-content-end">
-                            <span class="">📍 12</span> <span class="">❤️100</span>
+                            <span class="">📍 15</span> <span class="">❤️100</span>
                         </div>
 
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
     <div class="container position-relative" id="users-mods" hidden>
@@ -261,12 +260,11 @@
                 Если у вас есть места, которыми вы хотите поделиться с другими, вы можете создать свой режим.
                 Сделать это можно во вкладке "Редактор"
                 <br>
-                Правила игры пользовательских режимов очень простые: угадайте локацию по панораме и укажите её на
+                Правила игры пользовательских режимов очень просты: угадайте локацию по панораме и укажите её на
                 карте.
                 В стандартных же режимах могут встретиться уникальные наборы правил.
                 <br>
                 <br>
-
                 Над проектом работает команда студентов СПбГУ:
                 <a href="https://vk.com/julenka99" class="about-link"> Захватова Юля</a>, <a
                     href="https://vk.com/vict2001" class="about-link">Захаров Витя</a>, <a

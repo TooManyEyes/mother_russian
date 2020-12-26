@@ -78,7 +78,9 @@ function initMap() {
             document.getElementById('add-location').removeAttribute("disabled")
         }
     });
+}
 
+function openEditor(){
     map.setStreetView(panorama);
 }
 
